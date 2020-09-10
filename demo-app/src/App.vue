@@ -1,12 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
-        <router-link :to="{ name: 'Home' }">Home</router-link> |
-        <router-link :to="{ name: 'About' }">About</router-link> |
-        <router-link :to="{ name: 'TodoList' }">Todo-app</router-link>
-    </div>
-    <router-view/>
-    <todo-list></todo-list>
+    <todo-list v-bind:todos="todos"></todo-list>
   </div>
 </template>
 
@@ -43,7 +37,28 @@ export default {
     },
     data() {
         return {
-          
+			todos: [
+				{
+					title: 'Todo A',
+					project: 'Project A',
+					done: false,
+				},
+				{
+					title: 'Todo B',
+					project: 'Project B',
+					done: true,
+				},
+				{
+					title: 'Todo C',
+					project: 'Project C',
+					done: false,
+				},
+				{
+					title: 'Todo D',
+					project: 'Project D',
+					done: true,
+				},
+			]
         }
     }
 }
