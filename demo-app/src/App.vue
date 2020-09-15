@@ -1,65 +1,54 @@
 <template>
   <div id="app">
-    <todo-list v-bind:todos="todos"></todo-list>
+    <!-- <todo-list v-bind:todos="todos"></todo-list> -->
+    <div class="row">
+        <div class="col-md-6">
+            <ListTask></ListTask>
+        </div>
+        <div class="col-md-6">
+            <CompleteTask></CompleteTask>
+        </div>
+    </div>
+    <GetTask></GetTask>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
-
 <script>
-import TodoList from './components/TodoList';
-
+// import TodoList from './components/TodoList';
+import ListTask from './components/ListTask'
+import GetTask from './components/GetTask'
+import CompleteTask from './components/CompleteTask'
+ 
 export default {
     name: 'app',
     components: {
-      TodoList,
+    //   TodoList,
+        ListTask,
+        GetTask,
+        CompleteTask
     },
-    data() {
-        return {
-			todos: [
-				{
-					title: 'Todo A',
-					project: 'Project A',
-					done: false,
-				},
-				{
-					title: 'Todo B',
-					project: 'Project B',
-					done: true,
-				},
-				{
-					title: 'Todo C',
-					project: 'Project C',
-					done: false,
-				},
-				{
-					title: 'Todo D',
-					project: 'Project D',
-					done: true,
-				},
-			]
-        }
-    }
 }
 </script>
+
+<style>
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
+
+#nav {
+    padding: 30px;
+}
+
+#nav a {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+    color: #42b983;
+}
+</style>
